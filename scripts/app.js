@@ -201,6 +201,7 @@ const app = {
                 <div class="hero-badge" style="display:inline-flex;">🌱 Urban Green Pockets 2026</div>
                 <h2 style="font-size: 2.2rem; color: var(--accent); margin-top: 0.75rem;">Team Enrollment</h2>
                 <p style="color: var(--text-muted); font-size:0.95rem;">Register your team to participate in the NSS Nature Photo Competition.</p>
+                <button class="btn btn-secondary" onclick="app.showPage('home')" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem;">← Back to Home</button>
             </div>
             <form id="registration-form" onsubmit="app.handleRegister(event)">
                 <div class="form-grid">
@@ -432,6 +433,7 @@ const app = {
                 <span style="font-size:2.5rem;">🔑</span>
                 <h2 style="font-size: 2rem; color: var(--accent); margin-top: 0.5rem;">Participant Login</h2>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">Enter your Team Lead credentials to access the upload portal.</p>
+                <button class="btn btn-secondary" onclick="app.showPage('home')" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem;">← Back to Home</button>
             </div>
             <form onsubmit="app.handleLogin(event)">
                 <div class="form-group">
@@ -467,6 +469,7 @@ const app = {
                 <span style="font-size:2.5rem;">🛡️</span>
                 <h2 style="font-size: 2rem; color: var(--accent-warm); margin-top: 0.5rem;">Staff Access</h2>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">NSS Coordinator & Staff Login Portal</p>
+                <button class="btn btn-secondary" onclick="app.showPage('home')" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem;">← Back to Home</button>
             </div>
             <form onsubmit="app.handleAdminLogin(event)">
                 <div class="form-group">
@@ -515,7 +518,10 @@ const app = {
                         <div class="hero-badge" style="display:inline-flex; margin-bottom: 0.5rem;">🌿 Urban Green Pockets 2026</div>
                         <h2 style="font-size: 2rem; color: var(--accent);">NSS Staff Dashboard</h2>
                     </div>
-                    <button class="btn btn-secondary" onclick="sessionStorage.clear(); app.showPage('home')">← Logout</button>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <button class="btn btn-secondary" onclick="app.showPage('home')">← Back to Home</button>
+                        <button class="btn btn-secondary" onclick="sessionStorage.clear(); app.showPage('home')" style="color: var(--error);">← Logout</button>
+                    </div>
                 </div>
 
                 <div class="glass-card" style="margin-bottom: 2rem; border: 1px solid var(--accent);">
@@ -703,6 +709,7 @@ const app = {
                     <span style="font-size: 2.5rem;">📸</span>
                     <h2 style="color: var(--accent); font-size: 2rem; margin-top: 0.5rem;">Welcome, ${team.leaderName}!</h2>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Submit your Urban Green Pockets photo entry. <strong style="color: var(--accent-warm);">This can only be done once.</strong></p>
+                    <button class="btn btn-secondary" onclick="app.showPage('home')" style="margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem;">← Back to Home</button>
                 </div>
 
                 <div style="background: rgba(116,196,118,0.07); border: 1px solid rgba(116,196,118,0.2); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 2rem;">

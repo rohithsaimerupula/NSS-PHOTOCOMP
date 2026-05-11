@@ -168,12 +168,7 @@ const app = {
                 <button class="btn btn-secondary" onclick="app.showPage('gallery')">🖼️ View Gallery</button>
                 <button class="btn btn-secondary" onclick="app.showPage('login')">🔑 Participant Login</button>
             </div>
-            <div class="hero-stats">
-                <div class="hero-stat"><div class="hero-stat-value">3</div><div class="hero-stat-label">Members / Team</div></div>
-                <div class="hero-stat"><div class="hero-stat-value">1</div><div class="hero-stat-label">Photo Entry</div></div>
-                <div class="hero-stat"><div class="hero-stat-value">📱</div><div class="hero-stat-label">Smartphone Only</div></div>
-                <div class="hero-stat"><div class="hero-stat-value">🏆</div><div class="hero-stat-label">Win Prizes</div></div>
-            </div>
+
         </section>
 
         <section class="features-grid animate" style="padding-bottom: 5rem;">

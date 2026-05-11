@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Green Pockets | NSS Nature Photo Competition 2026</title>
+    <meta name="description" content="NSS Photo Competition 2026 — Urban Green Pockets. Capture the hidden nature thriving in our cities: parks, rooftop gardens, street trees, and green corridors.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./styles/main.css?v=10">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <script src="./scripts/storage.js?v=10" defer></script>
+    <script src="./scripts/app.js?v=10" defer></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="container animate-down" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">🌿 Urban Green Pockets</div>
+        <nav id="top-nav">
+            <button id="login-nav-btn" class="btn btn-secondary" onclick="app.showPage('admin-login')" style="font-size:0.85rem; padding: 0.55rem 1.1rem;">
+                Staff Login
+            </button>
+        </nav>
+    </header>
+
+    <!-- MAIN APP CONTENT -->
+    <main id="app-content" class="container"></main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-size:1.1rem; margin-bottom:0.5rem;">🌿 <strong style="color: var(--accent);">Urban Green Pockets</strong></p>
+        <p>NSS Photo Competition 2026 &nbsp;|&nbsp; Finding nature in every corner of the city</p>
+        <p style="margin-top: 0.75rem; font-size:0.78rem; opacity:0.5;">&copy; 2026 NSS Unit. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

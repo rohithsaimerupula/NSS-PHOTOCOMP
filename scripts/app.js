@@ -193,6 +193,67 @@ const app = {
                 <div class="feature-desc">Your very own campus is full of green pockets waiting to be discovered and immortalized.</div>
             </div>
         </section>
+
+        <section class="portals-section animate">
+            <div style="text-align:center; margin-bottom:3rem;">
+                <div class="hero-badge" style="display:inline-flex; margin-bottom:1rem;">🚀 Access Portals</div>
+                <h2 style="font-size:2.4rem;">Choose Your <span class="accent-text">Portal</span></h2>
+                <p style="color:var(--text-muted); max-width:520px; margin:0.75rem auto 0;">Register your team, submit photos, or manage the competition — all from one place.</p>
+            </div>
+            <div class="portals-grid">
+
+                <div class="portal-card portal-register" onclick="app.showPage('register')">
+                    <div class="portal-vfx-layer">
+                        <div class="plant-stem s1"></div><div class="plant-stem s2"></div><div class="plant-stem s3"></div>
+                        <div class="plant-leaf l1"></div><div class="plant-leaf l2"></div><div class="plant-leaf l3"></div><div class="plant-leaf l4"></div><div class="plant-leaf l5"></div>
+                        <div class="plant-spore sp1"></div><div class="plant-spore sp2"></div><div class="plant-spore sp3"></div><div class="plant-spore sp4"></div><div class="plant-spore sp5"></div>
+                        <div class="plant-glow"></div>
+                    </div>
+                    <div class="portal-content">
+                        <div class="portal-icon-wrap register-icon-wrap"><span class="portal-icon">🌱</span></div>
+                        <h3 class="portal-title">Registration Portal</h3>
+                        <p class="portal-desc">Enrol your team, upload ID cards, and capture a live photo to begin your journey.</p>
+                        <div class="portal-tags"><span class="ptag">Team Enrollment</span><span class="ptag">Live Verification</span></div>
+                        <span class="portal-btn register-btn">Enrol Now →</span>
+                    </div>
+                </div>
+
+                <div class="portal-card portal-student" onclick="app.showPage('login')">
+                    <div class="portal-vfx-layer">
+                        <div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div>
+                        <div class="water-drop wd1"></div><div class="water-drop wd2"></div><div class="water-drop wd3"></div><div class="water-drop wd4"></div>
+                        <div class="water-ripple wr1"></div><div class="water-ripple wr2"></div>
+                        <div class="water-bubble wb1"></div><div class="water-bubble wb2"></div><div class="water-bubble wb3"></div><div class="water-bubble wb4"></div>
+                        <div class="water-glow"></div>
+                    </div>
+                    <div class="portal-content">
+                        <div class="portal-icon-wrap student-icon-wrap"><span class="portal-icon">🔑</span></div>
+                        <h3 class="portal-title">Student Portal</h3>
+                        <p class="portal-desc">Login with your team credentials to access the photo upload portal and submit your entry.</p>
+                        <div class="portal-tags"><span class="ptag">Photo Upload</span><span class="ptag">EXIF Verify</span></div>
+                        <span class="portal-btn student-btn">Login Now →</span>
+                    </div>
+                </div>
+
+                <div class="portal-card portal-admin" onclick="app.showPage('admin-login')">
+                    <div class="portal-vfx-layer">
+                        <div class="admin-grid-line gl1"></div><div class="admin-grid-line gl2"></div><div class="admin-grid-line gl3"></div><div class="admin-grid-line gl4"></div>
+                        <div class="admin-orb o1"></div><div class="admin-orb o2"></div><div class="admin-orb o3"></div>
+                        <div class="admin-hex h1"></div><div class="admin-hex h2"></div>
+                        <div class="admin-particle ap1"></div><div class="admin-particle ap2"></div><div class="admin-particle ap3"></div><div class="admin-particle ap4"></div><div class="admin-particle ap5"></div>
+                        <div class="admin-scan"></div>
+                    </div>
+                    <div class="portal-content">
+                        <div class="portal-icon-wrap admin-icon-wrap"><span class="portal-icon">🛡️</span></div>
+                        <h3 class="portal-title">Admin Portal</h3>
+                        <p class="portal-desc">NSS Staff dashboard to approve registrations, manage submissions, and control platform settings.</p>
+                        <div class="portal-tags"><span class="ptag">Staff Access</span><span class="ptag">Dashboard</span></div>
+                        <span class="portal-btn admin-btn">Staff Login →</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     `,
 
     renderRegister: () => `

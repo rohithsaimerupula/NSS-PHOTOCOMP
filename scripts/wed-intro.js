@@ -148,6 +148,7 @@
      CANVAS VFX ENGINE
   ============================================================ */
   let canvas, ctx, W, H, raf;
+  let grassCanvas, grassCtx, grassW = 0;
   const particles  = [];
   const drops      = [];
   const fireflies  = [];
@@ -159,6 +160,8 @@
   function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
+    // Rebuild grass on resize
+    buildGrass();
   }
 
   /* ---- PARTICLE (pollen / dust) ---- */
@@ -385,30 +388,47 @@
     setInterval(burst, 1500);
   }
 
-  /* ---- GRASS STRIP ---- */
-  function drawGrass() {
-    const gc = document.getElementById('wed-grass-canvas');
-    if (!gc) return;
-    gc.width  = window.innerWidth;
-    gc.height = 220;
-    const gx  = gc.getContext('2d');
-    const blades = Math.floor(gc.width / 6);
+  /* ---- GRASS STRIP (built once, redrawn on resize) ---- */
+  // Store blade data so we can animate sway without resizing the canvas
+  const grassBlades = [];
 
-    for (let i = 0; i < blades; i++) {
-      const bx  = (i / blades) * gc.width + (Math.random() - 0.5) * 8;
-      const bh  = Math.random() * 100 + 60;
-      const bw  = Math.random() * 3 + 1.2;
-      const sway = Math.sin(i * 0.4 + Date.now() * 0.001) * 18;
-      const g   = Math.floor(Math.random() * 60 + 80);
-      gx.save();
-      gx.strokeStyle = `rgba(${Math.floor(g*0.25)},${g},${Math.floor(g*0.3)},0.8)`;
-      gx.lineWidth   = bw;
-      gx.beginPath();
-      gx.moveTo(bx, 220);
-      gx.quadraticCurveTo(bx + sway * 0.5, 220 - bh * 0.5, bx + sway, 220 - bh);
-      gx.stroke();
-      gx.restore();
+  function buildGrass() {
+    grassCanvas = document.getElementById('wed-grass-canvas');
+    if (!grassCanvas) return;
+    const cw = window.innerWidth;
+    grassCanvas.width  = cw;
+    grassCanvas.height = 220;
+    grassCtx = grassCanvas.getContext('2d');
+    grassW   = cw;
+    grassBlades.length = 0;
+    const count = Math.floor(cw / 5);
+    for (let i = 0; i < count; i++) {
+      const g = Math.floor(Math.random() * 60 + 80);
+      grassBlades.push({
+        bx:   (i / count) * cw + (Math.random() - 0.5) * 10,
+        bh:   Math.random() * 100 + 50,
+        bw:   Math.random() * 3 + 1,
+        phase: Math.random() * Math.PI * 2,
+        color: `rgba(${Math.floor(g*0.25)},${g},${Math.floor(g*0.3)},0.85)`
+      });
     }
+  }
+
+  function drawGrass() {
+    if (!grassCtx || !grassBlades.length) return;
+    grassCtx.clearRect(0, 0, grassW, 220);
+    const t = Date.now() * 0.001;
+    grassBlades.forEach(b => {
+      const sway = Math.sin(b.phase + t * 0.8) * 16;
+      grassCtx.save();
+      grassCtx.strokeStyle = b.color;
+      grassCtx.lineWidth   = b.bw;
+      grassCtx.beginPath();
+      grassCtx.moveTo(b.bx, 220);
+      grassCtx.quadraticCurveTo(b.bx + sway * 0.5, 220 - b.bh * 0.5, b.bx + sway, 220 - b.bh);
+      grassCtx.stroke();
+      grassCtx.restore();
+    });
   }
 
   /* ---- MAIN LOOP ---- */
@@ -453,28 +473,28 @@
   function initVFX() {
     canvas = document.getElementById('wed-canvas');
     ctx    = canvas.getContext('2d');
-    resize();
+    resize(); // also calls buildGrass()
     window.addEventListener('resize', resize);
 
-    // Spawn particles
-    for (let i = 0; i < 80; i++) {
+    // Particle counts — balanced for performance
+    const isMobile = window.innerWidth < 640;
+    const pCount = isMobile ? 40 : 70;
+    const dCount = isMobile ? 18 : 30;
+    const fCount = isMobile ? 14 : 24;
+    const lCount = isMobile ? 12 : 20;
+
+    for (let i = 0; i < pCount; i++) {
       const p = new Particle();
-      p.y = Math.random() * H; // pre-scatter
+      p.y = Math.random() * H;
       particles.push(p);
     }
-
-    // Spawn drops
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < dCount; i++) {
       const d = new Drop();
-      d.y = Math.random() * H; // pre-scatter
+      d.y = Math.random() * H;
       drops.push(d);
     }
-
-    // Spawn fireflies
-    for (let i = 0; i < 28; i++) fireflies.push(new Firefly());
-
-    // Spawn leaves
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < fCount; i++) fireflies.push(new Firefly());
+    for (let i = 0; i < lCount; i++) {
       const lf = new Leaf();
       lf.y = Math.random() * H;
       leaves.push(lf);

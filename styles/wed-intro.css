@@ -3,7 +3,7 @@
    High-level VFX Animations for June 5, 2026
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;600;700;800&display=swap');
+/* Cinzel font is loaded via the main Google Fonts link in index.html */
 
 /* ===== INTRO OVERLAY ===== */
 #wed-intro {

@@ -11,97 +11,6 @@
   /* ============================================================
      BUILD DOM
   ============================================================ */
-  function buildDOM() {
-    const overlay = document.createElement('div');
-    overlay.id = 'wed-intro';
-    overlay.innerHTML = `
-      <!-- Aurora bg -->
-      <div id="wed-aurora"></div>
-
-      <!-- Canvas VFX -->
-      <canvas id="wed-canvas"></canvas>
-
-      <!-- Corner leaf SVGs -->
-      <svg id="wed-leaf-tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 C60,20 120,80 80,160 C40,240 0,160 0,80 Z" fill="#22c55e" opacity="0.6"/>
-        <path d="M0,0 C30,40 70,100 40,180" stroke="#4ade80" stroke-width="2" fill="none" opacity="0.5"/>
-        <path d="M20,0 C50,30 60,90 30,150" stroke="#86efac" stroke-width="1.5" fill="none" opacity="0.4"/>
-        <circle cx="70" cy="90" r="3" fill="#4ade80" opacity="0.5"/>
-        <circle cx="40" cy="130" r="2" fill="#86efac" opacity="0.4"/>
-      </svg>
-      <svg id="wed-leaf-tr" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 C60,20 120,80 80,160 C40,240 0,160 0,80 Z" fill="#22c55e" opacity="0.6"/>
-        <path d="M0,0 C30,40 70,100 40,180" stroke="#4ade80" stroke-width="2" fill="none" opacity="0.5"/>
-      </svg>
-      <svg id="wed-leaf-bl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 C60,20 120,80 80,160 C40,240 0,160 0,80 Z" fill="#15803d" opacity="0.5"/>
-        <path d="M0,0 C30,40 70,100 40,180" stroke="#4ade80" stroke-width="2" fill="none" opacity="0.4"/>
-      </svg>
-      <svg id="wed-leaf-br" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,0 C60,20 120,80 80,160 C40,240 0,160 0,80 Z" fill="#15803d" opacity="0.5"/>
-        <path d="M0,0 C30,40 70,100 40,180" stroke="#4ade80" stroke-width="2" fill="none" opacity="0.4"/>
-      </svg>
-
-      <!-- Globe -->
-      <div id="wed-globe-wrap"><div id="wed-globe"></div></div>
-
-      <!-- Grass bottom strip -->
-      <canvas id="wed-grass-canvas" style="position:absolute;bottom:0;left:0;width:100%;height:220px;pointer-events:none;"></canvas>
-
-      <!-- Main content -->
-      <div id="wed-content">
-        <div id="wed-date-pill">🌍 June 5, 2026</div>
-
-        <h1 id="wed-title">
-          <span class="wed-title-line1">World Environment</span>
-          <span class="wed-title-line2">Day</span>
-        </h1>
-
-        <p id="wed-subtitle">Celebrate our planet — capture, conserve, cherish</p>
-
-        <!-- Countdown -->
-        <div id="wed-countdown-wrap">
-          <div id="wed-countdown-label">Countdown to World Environment Day</div>
-          <div id="wed-countdown">
-            <div class="wed-unit">
-              <div class="wed-digit" id="wd-days">000</div>
-              <div class="wed-label">Days</div>
-            </div>
-            <div class="wed-colon">:</div>
-            <div class="wed-unit">
-              <div class="wed-digit" id="wd-hours">00</div>
-              <div class="wed-label">Hours</div>
-            </div>
-            <div class="wed-colon">:</div>
-            <div class="wed-unit">
-              <div class="wed-digit" id="wd-mins">00</div>
-              <div class="wed-label">Minutes</div>
-            </div>
-            <div class="wed-colon">:</div>
-            <div class="wed-unit">
-              <div class="wed-digit" id="wd-secs">00</div>
-              <div class="wed-label">Seconds</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Celebration (shown when timer = 0) -->
-        <div id="wed-celebrate-msg">
-          <div id="wed-celebrate-badge">🌍🌿🎉</div>
-          <div id="wed-celebrate-text">Happy World<br>Environment Day!</div>
-          <div id="wed-celebrate-sub">June 5, 2026 — For Our Earth</div>
-        </div>
-
-        <button id="wed-skip">Enter Site &rarr;</button>
-      </div>
-    `;
-    // body is guaranteed available (DOMContentLoaded)
-    document.body.appendChild(overlay);
-    // Move to top of DOM visually via z-index (already 99999 in CSS)
-    // Hide body scroll
-    document.body.style.overflow = 'hidden';
-  }
-
   /* ============================================================
      COUNTDOWN TIMER
   ============================================================ */
@@ -518,10 +427,9 @@
   }
 
   /* ============================================================
-     BOOTSTRAP
+     BOOTSTRAP — DOM already in HTML, just wire up
   ============================================================ */
   function init() {
-    buildDOM();
     initVFX();
 
     // Countdown tick
@@ -529,7 +437,8 @@
     setInterval(updateCountdown, 1000);
 
     // Skip button
-    document.getElementById('wed-skip').addEventListener('click', dismiss);
+    const skipBtn = document.getElementById('wed-skip');
+    if (skipBtn) skipBtn.addEventListener('click', dismiss);
 
     // Auto-dismiss after 12 s (if not celebrating)
     setTimeout(() => {

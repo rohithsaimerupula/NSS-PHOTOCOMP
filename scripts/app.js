@@ -97,6 +97,25 @@ const app = {
         app.showPage('home');
     },
 
+    initTilt: () => {
+        const cards = document.querySelectorAll('.portal-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -10;
+                const rotateY = ((x - centerX) / centerX) * 10;
+                card.style.transform = `perspective(1000px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)';
+            });
+        });
+    },
+
     showPage: async (page) => {
         console.log(`Navigating to page: ${page}`);
         if (app.cameraStream && page !== 'register') {
@@ -115,6 +134,7 @@ const app = {
         try {
             if (page === 'home') {
                 appContent.innerHTML = app.renderHome();
+                setTimeout(() => app.initTilt(), 100);
             } else if (page === 'register') {
                 const settings = await storage.getSettings();
                 if (settings.registrationsOpen === false) {
@@ -204,11 +224,13 @@ const app = {
 
                 <div class="portal-card portal-register" onclick="app.showPage('register')">
                     <div class="portal-vfx-layer">
-                        <div class="forest-glow"></div>
-                        <div class="sun-ray sr1"></div><div class="sun-ray sr2"></div>
-                        <div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div><div class="firefly f6"></div>
+                        <div class="forest-bg"></div>
+                        <div class="sun-ray sr1"></div><div class="sun-ray sr2"></div><div class="sun-ray sr3"></div>
+                        <div class="fog-layer f-1"></div><div class="fog-layer f-2"></div>
+                        <div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div><div class="firefly f6"></div><div class="firefly f7"></div><div class="firefly f8"></div>
                         <div class="leaf-fall lf1"></div><div class="leaf-fall lf2"></div><div class="leaf-fall lf3"></div><div class="leaf-fall lf4"></div>
-                        <div class="leaf-fall lf-blur1"></div><div class="leaf-fall lf-blur2"></div>
+                        <div class="leaf-fall lf-blur1"></div><div class="leaf-fall lf-blur2"></div><div class="leaf-fall lf-blur3"></div>
+                        <div class="magic-spores"></div>
                     </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap register-icon-wrap"><span class="portal-icon">🌱</span></div>
@@ -221,13 +243,16 @@ const app = {
 
                 <div class="portal-card portal-student" onclick="app.showPage('login')">
                     <div class="portal-vfx-layer">
-                        <div class="water-caustics"></div>
-                        <div class="deep-water-glow"></div>
+                        <div class="water-bg"></div>
+                        <div class="water-caustics c1"></div><div class="water-caustics c2"></div>
+                        <div class="water-rays"></div>
                         <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
                         <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
                         <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
                         <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
                         <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
+                        <div class="bubble-wrap bw6"><div class="bubble b6"></div></div>
+                        <div class="plankton-layer"></div>
                         <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
                         <div class="water-surface"></div>
                     </div>
@@ -242,11 +267,19 @@ const app = {
 
                 <div class="portal-card portal-admin" onclick="app.showPage('admin-login')">
                     <div class="portal-vfx-layer">
+                        <div class="cyber-bg"></div>
                         <div class="cyber-grid"></div>
-                        <div class="matrix-code mc1">10110</div><div class="matrix-code mc2">01001</div><div class="matrix-code mc3">11011</div>
-                        <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div>
-                        <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div>
+                        <div class="matrix-rain">
+                            <span style="left:10%; animation-duration:2.5s;">10101</span>
+                            <span style="left:30%; animation-duration:1.8s; opacity:0.5; font-size:0.6rem;">01001</span>
+                            <span style="left:50%; animation-duration:3.2s;">11011</span>
+                            <span style="left:70%; animation-duration:2.1s; opacity:0.8; font-size:1.1rem;">00110</span>
+                            <span style="left:90%; animation-duration:2.8s;">10111</span>
+                        </div>
+                        <div class="circuit-lines cl1"></div><div class="circuit-lines cl2"></div>
+                        <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div><div class="neon-ring nr3"></div>
                         <div class="laser-scan"></div>
+                        <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div><div class="data-node dn4"></div>
                         <div class="cyber-glitch"></div>
                     </div>
                     <div class="portal-content">

@@ -123,13 +123,7 @@ const app = {
             app.cameraStream = null;
         }
         const appContent = document.getElementById('app-content');
-        const loginBtn = document.getElementById('login-nav-btn');
         app.currentPage = page;
-        
-        // Show login button only on home page
-        if (loginBtn) {
-            loginBtn.style.display = (page === 'home') ? 'block' : 'none';
-        }
         
         try {
             if (page === 'home') {
@@ -183,72 +177,66 @@ const app = {
             <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.75;">
                 Find the <strong style="color: var(--accent-warm);">hidden nature</strong> thriving in our cities — parks, rooftop gardens, street trees, campus courtyards, and forgotten green corridors. Capture it through your lens and show the world that green life grows everywhere.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="app.showPage('register')">🌱 Enrol Your Team</button>
-                <button class="btn btn-secondary" onclick="app.showPage('gallery')">🖼️ View Gallery</button>
-                <button class="btn btn-secondary" onclick="app.showPage('login')">🔑 Participant Login</button>
-            </div>
-
+            <button class="btn btn-secondary" onclick="app.showPage('gallery')">🖼️ View Gallery</button>
         </section>
 
         <section class="features-grid animate" style="padding-bottom: 5rem;">
-            <div class="feature-card">
-                <span class="feature-icon">🌳</span>
-                <div class="feature-title">Urban Trees & Parks</div>
-                <div class="feature-desc">Capture the majestic trees, shaded walkways, and lush parks hiding in plain sight across our city.</div>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🌱</span>
-                <div class="feature-title">Rooftop & Wall Gardens</div>
-                <div class="feature-desc">Document the remarkable green life flourishing on walls, rooftops, balconies, and unexpected urban spaces.</div>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🦋</span>
-                <div class="feature-title">Wildlife in the City</div>
-                <div class="feature-desc">Spot birds, butterflies, and insects thriving alongside humans — nature always finds a way.</div>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🌿</span>
-                <div class="feature-title">Campus Green Spaces</div>
-                <div class="feature-desc">Your very own campus is full of green pockets waiting to be discovered and immortalized.</div>
-            </div>
+            <div class="feature-card"><span class="feature-icon">🌳</span><div class="feature-title">Urban Trees &amp; Parks</div><div class="feature-desc">Capture the majestic trees, shaded walkways, and lush parks hiding in plain sight across our city.</div></div>
+            <div class="feature-card"><span class="feature-icon">🌱</span><div class="feature-title">Rooftop &amp; Wall Gardens</div><div class="feature-desc">Document the remarkable green life flourishing on walls, rooftops, balconies, and unexpected urban spaces.</div></div>
+            <div class="feature-card"><span class="feature-icon">🦋</span><div class="feature-title">Wildlife in the City</div><div class="feature-desc">Spot birds, butterflies, and insects thriving alongside humans — nature always finds a way.</div></div>
+            <div class="feature-card"><span class="feature-icon">🌿</span><div class="feature-title">Campus Green Spaces</div><div class="feature-desc">Your very own campus is full of green pockets waiting to be discovered and immortalized.</div></div>
         </section>
 
-        <section class="portals-section animate">
+        <section class="home-portals-section animate">
             <div style="text-align:center; margin-bottom:3rem;">
-                <div class="hero-badge" style="display:inline-flex; margin-bottom:1rem;">🚀 Access Portals</div>
-                <h2 style="font-size:2.4rem;">Choose Your <span class="accent-text">Portal</span></h2>
-                <p style="color:var(--text-muted); max-width:520px; margin:0.75rem auto 0;">Register your team, submit photos, or manage the competition — all from one place.</p>
+                <div class="hero-badge" style="display:inline-flex; margin-bottom:1rem;">🚀 Step Into Your Portal</div>
+                <h2 style="font-size:2.4rem;">Choose Your <span class="accent-text">World</span></h2>
+                <p style="color:var(--text-muted); max-width:520px; margin:0.75rem auto 0;">Register your team or login to submit — each portal has its own immersive atmosphere.</p>
             </div>
-            <div class="portals-grid">
+            <div class="home-portals-grid">
 
-                <div class="portal-card portal-register" onclick="app.showPage('register')">
-                    <div class="portal-content">
-                        <div class="portal-icon-wrap register-icon-wrap"><span class="portal-icon">🌱</span></div>
-                        <h3 class="portal-title">Registration Portal</h3>
-                        <p class="portal-desc">Enrol your team, upload ID cards, and capture a live photo to begin your journey.</p>
-                        <div class="portal-tags"><span class="ptag">Team Enrollment</span><span class="ptag">Live Verification</span></div>
-                        <span class="portal-btn register-btn">Enrol Now →</span>
+                <div class="hp-card hp-register" onclick="app.showPage('register')">
+                    <div class="hp-vfx">
+                        <div class="hp-forest-bg"></div>
+                        <div class="hp-sun-ray hsr1"></div><div class="hp-sun-ray hsr2"></div><div class="hp-sun-ray hsr3"></div>
+                        <div class="hp-fog hf1"></div><div class="hp-fog hf2"></div>
+                        <div class="hp-firefly hff1"></div><div class="hp-firefly hff2"></div><div class="hp-firefly hff3"></div><div class="hp-firefly hff4"></div><div class="hp-firefly hff5"></div><div class="hp-firefly hff6"></div>
+                        <div class="hp-leaf hl1"></div><div class="hp-leaf hl2"></div><div class="hp-leaf hl3"></div><div class="hp-leaf hl4"></div><div class="hp-leaf hl5"></div>
+                        <div class="hp-spores"></div>
+                    </div>
+                    <div class="hp-content">
+                        <div class="hp-icon hp-icon-green"><span>🌱</span></div>
+                        <h3 class="hp-title">Registration Portal</h3>
+                        <p class="hp-desc">Enrol your team, upload your ID card, and capture a live photo to begin your journey through the urban wilderness.</p>
+                        <div class="hp-tags">
+                            <span class="hp-tag hp-tag-green">Team Enrollment</span>
+                            <span class="hp-tag hp-tag-green">Live Verification</span>
+                            <span class="hp-tag hp-tag-green">ID Upload</span>
+                        </div>
+                        <span class="hp-btn hp-btn-green">🌿 Enrol Your Team →</span>
                     </div>
                 </div>
 
-                <div class="portal-card portal-student" onclick="app.showPage('login')">
-                    <div class="portal-content">
-                        <div class="portal-icon-wrap student-icon-wrap"><span class="portal-icon">🔑</span></div>
-                        <h3 class="portal-title">Student Portal</h3>
-                        <p class="portal-desc">Login with your team credentials to access the photo upload portal and submit your entry.</p>
-                        <div class="portal-tags"><span class="ptag">Photo Upload</span><span class="ptag">EXIF Verify</span></div>
-                        <span class="portal-btn student-btn">Login Now →</span>
+                <div class="hp-card hp-student" onclick="app.showPage('login')">
+                    <div class="hp-vfx">
+                        <div class="hp-ocean-bg"></div>
+                        <div class="hp-caustic hc1"></div><div class="hp-caustic hc2"></div><div class="hp-caustic hc3"></div>
+                        <div class="hp-wave-ray hwr1"></div><div class="hp-wave-ray hwr2"></div>
+                        <div class="hp-bubble hb1"></div><div class="hp-bubble hb2"></div><div class="hp-bubble hb3"></div><div class="hp-bubble hb4"></div><div class="hp-bubble hb5"></div><div class="hp-bubble hb6"></div><div class="hp-bubble hb7"></div><div class="hp-bubble hb8"></div>
+                        <div class="hp-jelly"><div class="hp-jelly-head"></div><div class="hp-jelly-tentacle hjt1"></div><div class="hp-jelly-tentacle hjt2"></div><div class="hp-jelly-tentacle hjt3"></div></div>
+                        <div class="hp-plankton"></div>
+                        <div class="hp-water-surface"></div>
                     </div>
-                </div>
-
-                <div class="portal-card portal-admin" onclick="app.showPage('admin-login')">
-                    <div class="portal-content">
-                        <div class="portal-icon-wrap admin-icon-wrap"><span class="portal-icon">🛡️</span></div>
-                        <h3 class="portal-title">Admin Portal</h3>
-                        <p class="portal-desc">NSS Staff dashboard to approve registrations, manage submissions, and control platform settings.</p>
-                        <div class="portal-tags"><span class="ptag">Staff Access</span><span class="ptag">Dashboard</span></div>
-                        <span class="portal-btn admin-btn">Staff Login →</span>
+                    <div class="hp-content">
+                        <div class="hp-icon hp-icon-blue"><span>🔑</span></div>
+                        <h3 class="hp-title">Participant Portal</h3>
+                        <p class="hp-desc">Login with your team credentials to access the photo upload portal and submit your urban green pockets entry.</p>
+                        <div class="hp-tags">
+                            <span class="hp-tag hp-tag-blue">Photo Upload</span>
+                            <span class="hp-tag hp-tag-blue">EXIF Verify</span>
+                            <span class="hp-tag hp-tag-blue">Team Login</span>
+                        </div>
+                        <span class="hp-btn hp-btn-blue">🌊 Login Now →</span>
                     </div>
                 </div>
 

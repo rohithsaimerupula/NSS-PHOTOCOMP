@@ -204,10 +204,11 @@ const app = {
 
                 <div class="portal-card portal-register" onclick="app.showPage('register')">
                     <div class="portal-vfx-layer">
-                        <div class="plant-stem s1"></div><div class="plant-stem s2"></div><div class="plant-stem s3"></div>
-                        <div class="plant-leaf l1"></div><div class="plant-leaf l2"></div><div class="plant-leaf l3"></div><div class="plant-leaf l4"></div><div class="plant-leaf l5"></div>
-                        <div class="plant-spore sp1"></div><div class="plant-spore sp2"></div><div class="plant-spore sp3"></div><div class="plant-spore sp4"></div><div class="plant-spore sp5"></div>
-                        <div class="plant-glow"></div>
+                        <div class="forest-glow"></div>
+                        <div class="sun-ray sr1"></div><div class="sun-ray sr2"></div>
+                        <div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div><div class="firefly f6"></div>
+                        <div class="leaf-fall lf1"></div><div class="leaf-fall lf2"></div><div class="leaf-fall lf3"></div><div class="leaf-fall lf4"></div>
+                        <div class="leaf-fall lf-blur1"></div><div class="leaf-fall lf-blur2"></div>
                     </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap register-icon-wrap"><span class="portal-icon">🌱</span></div>
@@ -220,11 +221,15 @@ const app = {
 
                 <div class="portal-card portal-student" onclick="app.showPage('login')">
                     <div class="portal-vfx-layer">
-                        <div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div>
-                        <div class="water-drop wd1"></div><div class="water-drop wd2"></div><div class="water-drop wd3"></div><div class="water-drop wd4"></div>
-                        <div class="water-ripple wr1"></div><div class="water-ripple wr2"></div>
-                        <div class="water-bubble wb1"></div><div class="water-bubble wb2"></div><div class="water-bubble wb3"></div><div class="water-bubble wb4"></div>
-                        <div class="water-glow"></div>
+                        <div class="water-caustics"></div>
+                        <div class="deep-water-glow"></div>
+                        <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
+                        <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
+                        <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
+                        <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
+                        <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
+                        <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
+                        <div class="water-surface"></div>
                     </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap student-icon-wrap"><span class="portal-icon">🔑</span></div>
@@ -237,11 +242,12 @@ const app = {
 
                 <div class="portal-card portal-admin" onclick="app.showPage('admin-login')">
                     <div class="portal-vfx-layer">
-                        <div class="admin-grid-line gl1"></div><div class="admin-grid-line gl2"></div><div class="admin-grid-line gl3"></div><div class="admin-grid-line gl4"></div>
-                        <div class="admin-orb o1"></div><div class="admin-orb o2"></div><div class="admin-orb o3"></div>
-                        <div class="admin-hex h1"></div><div class="admin-hex h2"></div>
-                        <div class="admin-particle ap1"></div><div class="admin-particle ap2"></div><div class="admin-particle ap3"></div><div class="admin-particle ap4"></div><div class="admin-particle ap5"></div>
-                        <div class="admin-scan"></div>
+                        <div class="cyber-grid"></div>
+                        <div class="matrix-code mc1">10110</div><div class="matrix-code mc2">01001</div><div class="matrix-code mc3">11011</div>
+                        <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div>
+                        <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div>
+                        <div class="laser-scan"></div>
+                        <div class="cyber-glitch"></div>
                     </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap admin-icon-wrap"><span class="portal-icon">🛡️</span></div>

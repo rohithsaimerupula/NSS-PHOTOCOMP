@@ -223,15 +223,6 @@ const app = {
             <div class="portals-grid">
 
                 <div class="portal-card portal-register" onclick="app.showPage('register')">
-                    <div class="portal-vfx-layer">
-                        <div class="forest-bg"></div>
-                        <div class="sun-ray sr1"></div><div class="sun-ray sr2"></div><div class="sun-ray sr3"></div>
-                        <div class="fog-layer f-1"></div><div class="fog-layer f-2"></div>
-                        <div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div><div class="firefly f6"></div><div class="firefly f7"></div><div class="firefly f8"></div>
-                        <div class="leaf-fall lf1"></div><div class="leaf-fall lf2"></div><div class="leaf-fall lf3"></div><div class="leaf-fall lf4"></div>
-                        <div class="leaf-fall lf-blur1"></div><div class="leaf-fall lf-blur2"></div><div class="leaf-fall lf-blur3"></div>
-                        <div class="magic-spores"></div>
-                    </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap register-icon-wrap"><span class="portal-icon">🌱</span></div>
                         <h3 class="portal-title">Registration Portal</h3>
@@ -242,20 +233,6 @@ const app = {
                 </div>
 
                 <div class="portal-card portal-student" onclick="app.showPage('login')">
-                    <div class="portal-vfx-layer">
-                        <div class="water-bg"></div>
-                        <div class="water-caustics c1"></div><div class="water-caustics c2"></div>
-                        <div class="water-rays"></div>
-                        <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
-                        <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
-                        <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
-                        <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
-                        <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
-                        <div class="bubble-wrap bw6"><div class="bubble b6"></div></div>
-                        <div class="plankton-layer"></div>
-                        <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
-                        <div class="water-surface"></div>
-                    </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap student-icon-wrap"><span class="portal-icon">🔑</span></div>
                         <h3 class="portal-title">Student Portal</h3>
@@ -266,22 +243,6 @@ const app = {
                 </div>
 
                 <div class="portal-card portal-admin" onclick="app.showPage('admin-login')">
-                    <div class="portal-vfx-layer">
-                        <div class="cyber-bg"></div>
-                        <div class="cyber-grid"></div>
-                        <div class="matrix-rain">
-                            <span style="left:10%; animation-duration:2.5s;">10101</span>
-                            <span style="left:30%; animation-duration:1.8s; opacity:0.5; font-size:0.6rem;">01001</span>
-                            <span style="left:50%; animation-duration:3.2s;">11011</span>
-                            <span style="left:70%; animation-duration:2.1s; opacity:0.8; font-size:1.1rem;">00110</span>
-                            <span style="left:90%; animation-duration:2.8s;">10111</span>
-                        </div>
-                        <div class="circuit-lines cl1"></div><div class="circuit-lines cl2"></div>
-                        <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div><div class="neon-ring nr3"></div>
-                        <div class="laser-scan"></div>
-                        <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div><div class="data-node dn4"></div>
-                        <div class="cyber-glitch"></div>
-                    </div>
                     <div class="portal-content">
                         <div class="portal-icon-wrap admin-icon-wrap"><span class="portal-icon">🛡️</span></div>
                         <h3 class="portal-title">Admin Portal</h3>
@@ -296,7 +257,16 @@ const app = {
     `,
 
     renderRegister: () => `
-        <div class="glass-card animate" style="max-width: 800px; margin: 2rem auto;">
+        <div class="page-vfx-bg register-theme">
+            <div class="forest-bg"></div>
+            <div class="sun-ray sr1"></div><div class="sun-ray sr2"></div><div class="sun-ray sr3"></div>
+            <div class="fog-layer f-1"></div><div class="fog-layer f-2"></div>
+            <div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div><div class="firefly f6"></div><div class="firefly f7"></div><div class="firefly f8"></div>
+            <div class="leaf-fall lf1"></div><div class="leaf-fall lf2"></div><div class="leaf-fall lf3"></div><div class="leaf-fall lf4"></div>
+            <div class="leaf-fall lf-blur1"></div><div class="leaf-fall lf-blur2"></div><div class="leaf-fall lf-blur3"></div>
+            <div class="magic-spores"></div>
+        </div>
+        <div class="glass-card animate" style="max-width: 800px; margin: 2rem auto; position: relative; z-index: 10;">
             <div style="text-align:center; margin-bottom: 2rem;">
                 <div class="hero-badge" style="display:inline-flex;">🌱 Urban Green Pockets 2026</div>
                 <h2 style="font-size: 2.2rem; color: var(--accent); margin-top: 0.75rem;">Team Enrollment</h2>
@@ -528,7 +498,21 @@ const app = {
     },
 
     renderLogin: () => `
-        <div class="glass-card animate" style="max-width: 420px; margin: 4rem auto;">
+        <div class="page-vfx-bg student-theme">
+            <div class="water-bg"></div>
+            <div class="water-caustics c1"></div><div class="water-caustics c2"></div>
+            <div class="water-rays"></div>
+            <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
+            <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
+            <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
+            <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
+            <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
+            <div class="bubble-wrap bw6"><div class="bubble b6"></div></div>
+            <div class="plankton-layer"></div>
+            <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
+            <div class="water-surface"></div>
+        </div>
+        <div class="glass-card animate" style="max-width: 420px; margin: 4rem auto; position: relative; z-index: 10;">
             <div style="text-align:center; margin-bottom:1.5rem;">
                 <span style="font-size:2.5rem;">🔑</span>
                 <h2 style="font-size: 2rem; color: var(--accent); margin-top: 0.5rem;">Participant Login</h2>
@@ -564,7 +548,23 @@ const app = {
     },
 
     renderAdminLogin: () => `
-        <div class="glass-card animate" style="max-width: 420px; margin: 4rem auto;">
+        <div class="page-vfx-bg admin-theme">
+            <div class="cyber-bg"></div>
+            <div class="cyber-grid"></div>
+            <div class="matrix-rain">
+                <span style="left:10%; animation-duration:2.5s;">10101</span>
+                <span style="left:30%; animation-duration:1.8s; opacity:0.5; font-size:0.6rem;">01001</span>
+                <span style="left:50%; animation-duration:3.2s;">11011</span>
+                <span style="left:70%; animation-duration:2.1s; opacity:0.8; font-size:1.1rem;">00110</span>
+                <span style="left:90%; animation-duration:2.8s;">10111</span>
+            </div>
+            <div class="circuit-lines cl1"></div><div class="circuit-lines cl2"></div>
+            <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div><div class="neon-ring nr3"></div>
+            <div class="laser-scan"></div>
+            <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div><div class="data-node dn4"></div>
+            <div class="cyber-glitch"></div>
+        </div>
+        <div class="glass-card animate" style="max-width: 420px; margin: 4rem auto; position: relative; z-index: 10;">
             <div style="text-align:center; margin-bottom:1.5rem;">
                 <span style="font-size:2.5rem;">🛡️</span>
                 <h2 style="font-size: 2rem; color: var(--accent-warm); margin-top: 0.5rem;">Staff Access</h2>

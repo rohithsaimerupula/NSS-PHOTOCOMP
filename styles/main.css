@@ -522,12 +522,28 @@ footer {
 /* ============================================================
    REGISTRATION PORTAL — Ultra Realistic Forest VFX
    ============================================================ */
+.page-vfx-bg {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1; pointer-events: none; overflow: hidden;
+}
+.page-vfx-bg.register-theme { background: #021a08; }
+.page-vfx-bg.register-theme::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(145deg, rgba(2,26,8,0.85) 0%, rgba(5,46,16,0.6) 50%, rgba(7,31,10,0.9) 100%);
+    z-index: 1; pointer-events: none;
+}
+
 .portal-register {
     position: relative;
     border: 1px solid rgba(74, 222, 128, 0.4);
     box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(34,197,94,0.15);
-    background: #021a08;
+    background: url('https://images.unsplash.com/photo-1542273917363-3b1817f69a5d?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
     overflow: hidden;
+}
+.portal-register::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(145deg, rgba(2,26,8,0.85) 0%, rgba(5,46,16,0.7) 50%, rgba(7,31,10,0.9) 100%);
+    z-index: 1; pointer-events: none;
 }
 .forest-bg {
     position: absolute; inset: -20px;
@@ -535,12 +551,6 @@ footer {
     filter: brightness(0.7) contrast(1.2);
     z-index: 0;
     transition: transform 0.5s ease;
-}
-.portal-register:hover .forest-bg { transform: scale(1.05); filter: brightness(0.85); }
-.portal-register::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(145deg, rgba(2,26,8,0.85) 0%, rgba(5,46,16,0.6) 50%, rgba(7,31,10,0.9) 100%);
-    z-index: 1; pointer-events: none;
 }
 .portal-register:hover { box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(74,222,128,0.25); border-color: rgba(74,222,128,0.7); }
 .portal-register .portal-title { color: #d1fae5; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
@@ -620,24 +630,30 @@ footer {
 /* ============================================================
    STUDENT PORTAL — Ultra Realistic Water VFX
    ============================================================ */
+.page-vfx-bg.student-theme { background: #020d1a; }
+.page-vfx-bg.student-theme::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(2,13,26,0.5) 0%, rgba(3,22,40,0.8) 50%, rgba(2,14,30,0.95) 100%);
+    z-index: 1; pointer-events: none;
+}
+
 .portal-student {
     position: relative;
     border: 1px solid rgba(56,189,248,0.4);
     box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(14,165,233,0.15);
-    background: #020d1a;
+    background: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
     overflow: hidden;
+}
+.portal-student::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(2,13,26,0.6) 0%, rgba(3,22,40,0.85) 50%, rgba(2,14,30,0.95) 100%);
+    z-index: 1; pointer-events: none;
 }
 .water-bg {
     position: absolute; inset: -20px;
     background: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
     filter: brightness(0.6) contrast(1.3) saturate(1.2);
     z-index: 0; transition: transform 0.5s ease;
-}
-.portal-student:hover .water-bg { transform: scale(1.05); filter: brightness(0.75) contrast(1.3) saturate(1.2); }
-.portal-student::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(2,13,26,0.5) 0%, rgba(3,22,40,0.8) 50%, rgba(2,14,30,0.95) 100%);
-    z-index: 1; pointer-events: none;
 }
 .portal-student:hover { box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(56,189,248,0.25); border-color: rgba(56,189,248,0.7); }
 .portal-student .portal-title { color: #e0f2fe; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
@@ -710,6 +726,13 @@ footer {
 /* ============================================================
    ADMIN PORTAL — Ultra Holographic Cyberpunk VFX
    ============================================================ */
+.page-vfx-bg.admin-theme { background: #05020a; }
+.page-vfx-bg.admin-theme::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(45,20,70,0.7) 0%, rgba(10,5,20,0.95) 100%);
+    z-index: 1; pointer-events: none;
+}
+
 .portal-admin {
     position: relative;
     border: 1px solid rgba(167,139,250,0.4);
@@ -717,17 +740,16 @@ footer {
     background: #05020a;
     overflow: hidden;
 }
+.portal-admin::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(45,20,70,0.8) 0%, rgba(10,5,20,0.9) 100%);
+    z-index: 1; pointer-events: none;
+}
 .cyber-bg {
     position: absolute; inset: -20px;
     background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop') center/cover no-repeat;
     filter: brightness(0.4) contrast(1.5) hue-rotate(260deg);
     z-index: 0; transition: transform 0.5s ease; mix-blend-mode: hard-light;
-}
-.portal-admin:hover .cyber-bg { transform: scale(1.05); filter: brightness(0.6) contrast(1.5) hue-rotate(260deg); }
-.portal-admin::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(45,20,70,0.7) 0%, rgba(10,5,20,0.95) 100%);
-    z-index: 1; pointer-events: none;
 }
 .portal-admin:hover { box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(167,139,250,0.3); border-color: rgba(167,139,250,0.8); }
 .portal-admin .portal-title { color: #ede9fe; text-shadow: 0 0 15px rgba(167,139,250,0.9), 0 0 25px rgba(139,92,246,0.6); }

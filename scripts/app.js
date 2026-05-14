@@ -612,7 +612,23 @@ const app = {
         const upsOpenStr = settings.uploadsOpen !== false;
         
         return `
-            <div class="animate" style="margin: 2rem 0;">
+            <div class="page-vfx-bg admin-theme">
+                <div class="cyber-bg"></div>
+                <div class="cyber-grid"></div>
+                <div class="matrix-rain">
+                    <span style="left:10%; animation-duration:2.5s;">10101</span>
+                    <span style="left:30%; animation-duration:1.8s; opacity:0.5; font-size:0.6rem;">01001</span>
+                    <span style="left:50%; animation-duration:3.2s;">11011</span>
+                    <span style="left:70%; animation-duration:2.1s; opacity:0.8; font-size:1.1rem;">00110</span>
+                    <span style="left:90%; animation-duration:2.8s;">10111</span>
+                </div>
+                <div class="circuit-lines cl1"></div><div class="circuit-lines cl2"></div>
+                <div class="neon-ring nr1"></div><div class="neon-ring nr2"></div><div class="neon-ring nr3"></div>
+                <div class="laser-scan"></div>
+                <div class="data-node dn1"></div><div class="data-node dn2"></div><div class="data-node dn3"></div><div class="data-node dn4"></div>
+                <div class="cyber-glitch"></div>
+            </div>
+            <div class="animate" style="margin: 2rem 0; position: relative; z-index: 10;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
                     <div>
                         <div class="hero-badge" style="display:inline-flex; margin-bottom: 0.5rem;">🌿 Urban Green Pockets 2026</div>
@@ -794,7 +810,21 @@ const app = {
 
         if (alreadyUploaded) {
             return `
-                <div class="glass-card animate" style="max-width: 600px; margin: 4rem auto; text-align: center;">
+                <div class="page-vfx-bg student-theme">
+                    <div class="water-bg"></div>
+                    <div class="water-caustics c1"></div><div class="water-caustics c2"></div>
+                    <div class="water-rays"></div>
+                    <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
+                    <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
+                    <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
+                    <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
+                    <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
+                    <div class="bubble-wrap bw6"><div class="bubble b6"></div></div>
+                    <div class="plankton-layer"></div>
+                    <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
+                    <div class="water-surface"></div>
+                </div>
+                <div class="glass-card animate" style="max-width: 600px; margin: 4rem auto; text-align: center; position: relative; z-index: 10;">
                     <span style="font-size: 3rem;">🌿</span>
                     <h2 style="color: var(--accent); margin: 1rem 0;">Photo Submitted!</h2>
                     <p style="color: var(--text-muted); margin-bottom: 2rem;">Your Urban Green Pocket has been captured and submitted successfully. Each team is strictly permitted to upload only <strong>one entry</strong>.</p>
@@ -804,7 +834,21 @@ const app = {
         }
 
         return `
-            <div class="glass-card animate" style="max-width: 620px; margin: 4rem auto;">
+            <div class="page-vfx-bg student-theme">
+                <div class="water-bg"></div>
+                <div class="water-caustics c1"></div><div class="water-caustics c2"></div>
+                <div class="water-rays"></div>
+                <div class="bubble-wrap bw1"><div class="bubble b1"></div></div>
+                <div class="bubble-wrap bw2"><div class="bubble b2"></div></div>
+                <div class="bubble-wrap bw3"><div class="bubble b3"></div></div>
+                <div class="bubble-wrap bw4"><div class="bubble b4"></div></div>
+                <div class="bubble-wrap bw5"><div class="bubble b5"></div></div>
+                <div class="bubble-wrap bw6"><div class="bubble b6"></div></div>
+                <div class="plankton-layer"></div>
+                <div class="jellyfish"><div class="jelly-head"></div><div class="jelly-tentacles"></div></div>
+                <div class="water-surface"></div>
+            </div>
+            <div class="glass-card animate" style="max-width: 620px; margin: 4rem auto; position: relative; z-index: 10;">
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <span style="font-size: 2.5rem;">📸</span>
                     <h2 style="color: var(--accent); font-size: 2rem; margin-top: 0.5rem;">Welcome, ${team.leaderName}!</h2>
